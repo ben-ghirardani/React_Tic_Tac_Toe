@@ -18,7 +18,8 @@ class Board extends Component {
       positions[index] = "O"
     }
     this.setState({selectedPositions: positions});
-    this.props.changeTurn(positions)
+    this.props.changeTurn(this.props.checkForWin, positions)
+
 
   }
 

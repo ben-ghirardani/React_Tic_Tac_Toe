@@ -22,7 +22,6 @@ class GameContainer extends Component {
   }
 
   checkForWin(data) {
-    console.log(data)
     for (var i = 0; i < this.state.winningCombos.length; i++) {
       var index1 = this.state.winningCombos[i][0];
       var index2 = this.state.winningCombos[i][1];
@@ -33,7 +32,9 @@ class GameContainer extends Component {
         (data[index1] == data[index2] && data[index1] == data[index3]){
         console.log("Player Wins")
       } else {
-        console.log("no match")
+        if(data.includes(null) === false){
+          console.log("Its a draw");
+        }
       }
     }
   }

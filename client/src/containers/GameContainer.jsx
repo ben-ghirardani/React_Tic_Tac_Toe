@@ -12,14 +12,31 @@ class GameContainer extends Component {
     }
   }
 
-  changeTurn(){
+  changeTurn(data){
     if(this.state.turn === 1){
       this.setState( { turn: 2 } )
     } else {
       this.setState( { turn: 1 } )
     }
+    this.checkForWin(data);
   }
 
+  checkForWin(data) {
+    console.log(data)
+    for (var i = 0; i < this.state.winningCombos.length; i++) {
+      var index1 = this.state.winningCombos[i][0];
+      var index2 = this.state.winningCombos[i][1];
+      var index3 = this.state.winningCombos[i][2];
+      if(data[index1] === null || data[index2] === null || data[index3] === null){
+        console.log("null detected")
+      } else if
+        (data[index1] == data[index2] && data[index1] == data[index3]){
+        console.log("Player Wins")
+      } else {
+        console.log("no match")
+      }
+    }
+  }
 
 
   render() {
@@ -27,7 +44,7 @@ class GameContainer extends Component {
       <section className="game">
         Welcome to Tic-Tac-Toe<br/>
         Player {this.state.turn} turn
-        <Board turn={this.state.turn} changeTurn={this.changeTurn}/>
+        <Board turn={this.state.turn} changeTurn={this.changeTurn.bind(this)}/>
       </section>
     )
   }

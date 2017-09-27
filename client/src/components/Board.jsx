@@ -17,13 +17,12 @@ class Board extends Component {
     } else {
       positions[index] = "O"
     }
-    console.log(positions);
-    // this.setState({selectedPositions: [index]})
+    this.setState({selectedPositions: positions});
+    this.props.changeTurn(positions)
 
   }
 
   render(){
-    console.log(this.props)
     return(
       <div className="board">
         <Square id="0" selectedPositions={this.state.selectedPositions} turn={this.props.turn} playerPlayed={this.playerPlayed.bind(this)}/>

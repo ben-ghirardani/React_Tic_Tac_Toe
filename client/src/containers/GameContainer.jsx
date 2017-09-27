@@ -18,7 +18,7 @@ class GameContainer extends Component {
       <section className="game">
         Welcome to Tic-Tac-Toe<br/>
         Player {this.state.turn} turn
-        <Board/>
+        <Board selectedPositions={this.state.selectedPositions} turn={this.state.turn} />
       </section>
     )
   }

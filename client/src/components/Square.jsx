@@ -13,7 +13,11 @@ handleClick(event){
   if(this.state.display!= "-"){
     return
   }
-  
+  if(this.props.turn === 1) {
+    this.setState({display: "X"})
+  } else {this.setState({display: "O"})}
+
+
 }
 
   render(){

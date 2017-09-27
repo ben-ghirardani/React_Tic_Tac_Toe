@@ -9,16 +9,22 @@ class Square extends Component {
     }
   }
 
-handleClick(event){
+  handleClick(event){
   if(this.state.display!= "-"){
     return
   }
   if(this.props.turn === 1) {
     this.setState({display: "X"})
-  } else {this.setState({display: "O"})}
+    } else {
+      this.setState({display: "O"})
+  }
+  var index = Math.floor(this.props.id);
+  
+  this.props.playerPlayed(index);
+
+  }
 
 
-}
 
   render(){
     return(

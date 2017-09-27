@@ -7,6 +7,16 @@ class Board extends Component {
     return(
       <div className="board">
         <Square/>
+        <Square/>
+        <Square/>
+        <br/>
+        <Square/>
+        <Square/>
+        <Square/>
+        <br/>
+        <Square/>
+        <Square/>
+        <Square/>
       </div>
       )
   }

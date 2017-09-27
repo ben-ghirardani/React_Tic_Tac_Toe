@@ -8,7 +8,7 @@ class GameContainer extends Component {
     super(props);
     this.state = {
       selectedPositions: Array(9).fill(null),
-      turn: "a",
+      turn: 1,
       winningCombos: [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
     }
   }
@@ -16,7 +16,8 @@ class GameContainer extends Component {
   render() {
     return (
       <section className="game">
-        Welcome to Tic-Tac-Toe
+        Welcome to Tic-Tac-Toe<br/>
+        Player {this.state.turn} turn
         <Board/>
       </section>
     )

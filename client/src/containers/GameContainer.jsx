@@ -9,7 +9,8 @@ class GameContainer extends Component {
     this.state = {
       turn: 1,
       winningCombos: [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]],
-      result: "turn"
+      result: "turn",
+      player: "Player"
     }
   }
 
@@ -39,7 +40,7 @@ class GameContainer extends Component {
         this.confirmWin({ turn: this.state.turn, result: "wins!" });
       } else {
         if(data.includes(null) === false){
-          console.log("Its a draw");
+          this.confirmWin({ player: "It's a DRAW!!", result: "", turn: ""});
         }
       }
     }
@@ -52,7 +53,7 @@ class GameContainer extends Component {
     return (
       <section className="game">
         Welcome to Tic-Tac-Toe<br/>
-        Player  {this.state.turn}  {this.state.result}
+        {this.state.player}  {this.state.turn}  {this.state.result}
       
         <Board turn={this.state.turn} changeTurn={this.changeTurn.bind(this)} checkForWin={this.checkForWin.bind(this)}/>
       </section>

@@ -1,10 +1,31 @@
 .button {
   font-size: 24px;
+  background-color: #B1E2E8;
   border-radius: 0px;
   height: 105px;
   width: 105px;
   border-style: solid;
   border-color: black;
   border-width: 1px;
-  
+}
+
+.button:hover {
+  background-color: #8503FF
+}
+
+.reset {
+  font-size: 14px;
+    background-color: #B1E2E8;
+    border-radius: 5px;
+    height: 35px;
+    width: 105px;
+    border-style: solid;
+    color: black;
+    border-width: 1px;
+    border-color: white;
+    margin: 0 20px 0 20px;
+}
+
+.reset:hover {
+  background-color: #8503FF
 }

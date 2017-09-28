@@ -67,25 +67,25 @@ class GameContainer extends Component {
         (data[index1] === data[index2] && data[index1] === data[index3]){
         this.confirmWin({ player: "Player", turn: this.state.turn, result: "wins!" });
       } else if
-        (data[index1] != data[index2] || data[index1] != data[index3]) {         
-      }else{
-        this.confirmWin({ player: "It's a DRAW!!", result: "", turn: ""});  
-      }
+        (this.state.selectedPositions.includes(null) != true && (data[index1] != data[index2] || data[index1] != data[index3])){
+        this.confirmWin({ player: "It's a DRAW!!", result: "", turn: ""});         
+      }else if
+      (data[index1] != data[index2] || data[index1] != data[index3]) {          
+      } 
     }
   }
 
   render() {
     return (
       <section className="game">
-        <p className="Title">Welcome to Tic-Tac-Toe</p>
+        <p className="title">Welcome to Tic-Tac-Toe</p>
+        <br/>
+        <p className="status">{this.state.player}  {this.state.turn}  {this.state.result}</p>
         <br/>
         <br/>
-        <p className="Status">{this.state.player}  {this.state.turn}  {this.state.result}</p>
-        <br/>
-        <br/>
-        <Board playerPlayed={this.playerPlayed.bind(this)} selectedPositions={this.state.selectedPositions}/>
+        <Board className="board" playerPlayed={this.playerPlayed.bind(this)} selectedPositions={this.state.selectedPositions}/>
         <br/><br/><br/>
-        <button onClick={this.reset.bind(this)}>Reset Game</button>
+        <button className="reset" onClick={this.reset.bind(this)}>Reset Game</button>
       </section>
     )
   }

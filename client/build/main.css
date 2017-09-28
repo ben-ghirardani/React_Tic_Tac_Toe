@@ -7,11 +7,12 @@
   border-style: solid;
   border-color: black;
   border-width: 1px;
+  vertical-align: top;
 }
 
-.button:hover {
+ .button:hover {
   background-color: #8503FF
-}
+} 
 
 .reset {
   font-size: 14px;
